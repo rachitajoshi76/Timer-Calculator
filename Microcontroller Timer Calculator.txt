@@ -1,0 +1,98 @@
+Microcontroller Timer Calculator
+A comprehensive web application for precise microcontroller timer calculations and analysis, designed for embedded systems engineers and developers. This tool facilitates accurate computation of timer register values, TMOD configurations, and timing parameters.
+Core Functionality
+The application provides three specialized calculators:
+1. Forward Calculator
+
+Computes TH/TL register values from frequency inputs
+Supports dual-mode operation:
+
+Mode 1: Complete TH & TL register value calculation
+Mode 2: TH register value calculation
+
+
+Handles precise frequency inputs with automatic validation
+
+2. TMOD Configuration Analyzer
+
+Performs comprehensive Timer Mode register analysis
+Features include:
+
+Bit-level register visualization
+Automatic mode configuration detection
+Binary representation display
+
+
+Provides detailed operational mode interpretation
+
+3. Reverse Calculator
+
+Derives timing parameters from register values
+Offers two calculation modes:
+
+Mode 1: Full analysis using both TH & TL values
+Mode 2: Simplified analysis using TH value only
+
+
+Generates precise timing metrics with microsecond accuracy
+
+Technical Architecture
+Frontend Stack
+
+HTML5 for structural components
+CSS3 with Custom Properties for styling
+Vanilla JavaScript for calculations
+Responsive design implementation
+
+User Interface
+
+Dark/Light theme toggle with persistent storage
+Mobile-responsive layout
+Fluid typography system
+Accessibility-compliant components
+
+Installation
+The application runs directly in web browsers without requiring installation or setup. Simply open the index.html file in a supported web browser to begin using the calculator.
+Usage Guidelines
+Forward Calculation
+
+Enter target frequency (Hz)
+Select calculation mode
+Review hexadecimal outputs
+
+TMOD Analysis
+
+Input TMOD hexadecimal value (00-FF)
+Review generated analysis:
+
+Binary representation
+Timer mode configuration
+Bit functionality breakdown
+
+
+
+Reverse Calculation
+
+Enter register values
+Choose calculation mode
+Analyze timing parameters
+
+Technical Requirements
+Prerequisites
+
+Modern web browser
+Basic understanding of microcontroller timing concepts
+
+Browser Compatibility
+
+Chrome 88+
+Firefox 85+
+Safari 14+
+Edge 88+
+
+License
+MIT License - See LICENSE file for details.
+Author
+Developed by Rachita Joshi
+
+For technical queries or issues, please contact the developer.

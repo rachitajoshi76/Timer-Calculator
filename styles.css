@@ -1,0 +1,348 @@
+/* Base styles and theme variables */
+:root {
+  --light-bg: #f4f4f4;
+  --dark-bg: #1a1a1a;
+  --light-calculator-bg: #ffffff;
+  --dark-calculator-bg: #2d2d2d;
+  --light-text: #333333;
+  --dark-text: #ffffff;
+  --border-light: #e0e0e0;
+  --border-dark: #404040;
+  --primary-color: #4caf50;
+  --primary-hover: #45a049;
+}
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  transition: all 0.3s ease;
+  min-height: 100vh;
+}
+
+body.light-mode {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+body.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+/* Header Styles */
+.header {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.header-content {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: center;
+  margin: 0;
+}
+
+.dark-mode h1 {
+  color: var(--primary-color);
+}
+
+/* Theme Switch Styles */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  right: 20px;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+  margin-right: 10px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.theme-label {
+  font-size: 14px;
+  font-weight: 500;
+  user-select: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Container and Calculator Sections */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.calculator-section {
+  background-color: var(--light-calculator-bg);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid var(--border-light);
+}
+
+.dark-mode .calculator-section {
+  background-color: var(--dark-calculator-bg);
+  border-color: var(--border-dark);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Headers */
+h2 {
+  color: var(--light-text);
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 10px;
+}
+
+.dark-mode h2 {
+  color: var(--dark-text);
+  border-bottom-color: var(--border-dark);
+}
+
+/* Form Elements */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--border-light);
+  border-radius: 6px;
+  background-color: var(--light-calculator-bg);
+  color: var(--light-text);
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .input-group input {
+  background-color: var(--dark-calculator-bg);
+  border-color: var(--border-dark);
+  color: var(--dark-text);
+}
+
+.input-group input::-webkit-outer-spin-button,
+.input-group input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-group input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Buttons */
+.button-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+  white-space: nowrap;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Output Styles */
+.output-group {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+}
+
+.dark-mode .output-group {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.output-group p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+#binaryOutput {
+  margin-top: 15px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.dark-mode #binaryOutput {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 12px; /* Reduced gap for mobile */
+  }
+
+  .theme-switch-wrapper {
+    position: static;
+    margin: 0 auto; /* Removed top margin */
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .calculator-section {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .theme-switch-wrapper {
+    padding: 8px 12px;
+  }
+
+  .theme-switch {
+    height: 28px;
+    width: 50px;
+  }
+
+  .slider:before {
+    height: 20px;
+    width: 20px;
+    bottom: 4px;
+    left: 4px;
+  }
+
+  .calculator-section {
+    padding: 15px;
+  }
+
+  .input-group input {
+    padding: 10px;
+  }
+
+  button {
+    padding: 10px 20px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .theme-switch-wrapper {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .calculator-section {
+    break-inside: avoid;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+}
